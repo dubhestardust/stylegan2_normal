@@ -46,6 +46,7 @@ def run(dataset, data_dir, result_dir, config_id, num_gpus, total_kimg, gamma, m
     sc        = dnnlib.SubmitConfig()                                          # Options for dnnlib.submit_run().
     tf_config = {'rnd.np_random_seed': 1000}                                   # Options for tflib.init_tf().
 
+    print("载入的模型为：",resume_pkl)
     train.data_dir = data_dir
     train.total_kimg = total_kimg
     train.mirror_augment = mirror_augment
