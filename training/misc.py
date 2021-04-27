@@ -36,6 +36,7 @@ def locate_latest_pkl(result_dir):
     latest_pickle = allpickles[-1]
     resume_run_id = os.path.basename(os.path.dirname(latest_pickle))
     RE_KIMG = re.compile('network-snapshot-(\d+).pkl')
+    print("PKL文件：",RE_KIMG)
     kimg = int(RE_KIMG.match(os.path.basename(latest_pickle)).group(1))
     return (latest_pickle, float(kimg))
 
